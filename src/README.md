@@ -1,4 +1,4 @@
-## Link -
+## Link - https://app-buddy.netlify.app
 
 ## Proposal
 
@@ -20,7 +20,7 @@ Another concern is caused if the user’s account credentials are compromised, o
 
 ## Tech-stack
 
-<img src = "Architecture.png" width = "500">
+<img src = "/Architecture.png" width = "500">
 
 ### Services
 
