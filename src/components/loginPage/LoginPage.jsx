@@ -1,5 +1,4 @@
 import React from "react";
-import { GoogleLogin } from "react-google-login";
 
 import googleImage from "../../assets/googleImage.png";
 import styles from "./LoginPage.module.css";
