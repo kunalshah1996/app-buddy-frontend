@@ -18,17 +18,17 @@ The proposed dashboard, post the required authorization, populates a kanban boar
 The dashboard will require the user to authorize access to their inbox, in order to filter the emails and retrieve relevant information/links to the application, which can be counted as a privacy concern on the user’s end.
 Another concern is caused if the user’s account credentials are compromised, or if an attacker gains access to the user’s google account in any way; which will indirectly give them access to the dashboard as well.
 
-## Tech-stack
+## Architecture
 
 <img src = "/Architecture.png" width = "500">
 
 ### Services
 
 Database : Supabase <br />
-Frontend : Netlify <br />
-Backend : Fly.io/Render <br />
+Frontend hosting: Netlify <br />
+Backend hosting: Render <br />
 
-### Technologies
+### Tech Stack
 
 Database : PostgreSQL <br />
 Front-end : React <br />
