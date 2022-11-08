@@ -1,11 +1,13 @@
 import React from "react";
+// import { useDispatch } from "react-redux";
 
 import googleImage from "../../assets/googleImage.png";
 import styles from "./LoginPage.module.css";
+// import { getUser } from "../../actions/users";
 
 const LoginPage = () => {
   const googleLogin = () => {
-    window.open("https://appbuddy.onrender.com/auth/google", "_self");
+    window.open("http://localhost:8000/auth/google", "_self"); //https://appbuddy.onrender.com/auth/google
   };
 
   return (
