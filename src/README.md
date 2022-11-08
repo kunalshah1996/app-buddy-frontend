@@ -1,4 +1,5 @@
-## Link - https://app-buddy.netlify.app
+## Link -
+#### https://app-buddy.netlify.app/
 
 ## Proposal
 
@@ -25,10 +26,10 @@ Another concern is caused if the user’s account credentials are compromised, o
 ### Services
 
 Database : Supabase <br />
-Frontend hosting: Netlify <br />
-Backend hosting: Render <br />
+Frontend : Netlify <br />
+Backend : Fly.io/Render <br />
 
-### Tech Stack
+### Tech-stack
 
 Database : PostgreSQL <br />
 Front-end : React <br />
@@ -40,6 +41,7 @@ Google GMail API
 
 ## MVP(end of week 13)
 
-- Back-end server connection to GMail API
+- Setting up Google OAuth2 using PassportJS for user authroization
+- Setting up Back-end server connection to GMail API for data retrieval
 - Fetch information from user's spreadsheet
 - Retrieve relevant assessment emails
