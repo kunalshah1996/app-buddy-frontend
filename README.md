@@ -1,4 +1,5 @@
 ## Link -
+#### https://app-buddy.netlify.app/
 
 ## Proposal
 
@@ -18,7 +19,7 @@ The proposed dashboard, post the required authorization, populates a kanban boar
 The dashboard will require the user to authorize access to their inbox, in order to filter the emails and retrieve relevant information/links to the application, which can be counted as a privacy concern on the user’s end.
 Another concern is caused if the user’s account credentials are compromised, or if an attacker gains access to the user’s google account in any way; which will indirectly give them access to the dashboard as well.
 
-## Tech-stack
+## Architecture
 
 <img src = "Architecture.png" width = "500">
 
@@ -28,7 +29,7 @@ Database : Supabase <br />
 Frontend : Netlify <br />
 Backend : Fly.io/Render <br />
 
-### Technologies
+### Tech-stack
 
 Database : PostgreSQL <br />
 Front-end : React <br />
@@ -40,6 +41,7 @@ Google GMail API
 
 ## MVP(end of week 13)
 
-- Back-end server connection to GMail API
+- Setting up Google OAuth2 using PassportJS for user authroization
+- Setting up Back-end server connection to GMail API for data retrieval
 - Fetch information from user's spreadsheet
 - Retrieve relevant assessment emails
