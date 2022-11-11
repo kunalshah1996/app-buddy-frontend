@@ -1,6 +1,8 @@
-import { GET_USER } from "../constants/actionTypes";
+import { GET_USER, LOGOUT } from "../constants/actionTypes";
 
 import * as api from '../api/index.js';
+
+console.log("api", api);
 
 export const getUser = () => async (dispatch) => {
     try {
@@ -11,4 +13,14 @@ export const getUser = () => async (dispatch) => {
         console.log(error.message);
     }
 
+}
+
+export const logout = () => async (dispatch) => {
+    console.log("In actions logout");
+    try {
+        await api.logout();
+        dispatch({ type: LOGOUT });
+    } catch (error) {
+        console.log(error.message);
+    }
 }

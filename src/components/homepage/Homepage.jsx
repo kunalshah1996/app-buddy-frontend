@@ -5,11 +5,12 @@ import { getUser } from "../../actions/users";
 
 const Homepage = () => {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
   useEffect(() => {
     dispatch(getUser());
-  }, [dispatch]);
-  const user = useSelector((state) => state.user.user);
-  console.log("User", user);
+  }, [dispatch, user]);
+
+  //   console.log("User", user);
   return (
     <div>
       Welcome To App Buddy
