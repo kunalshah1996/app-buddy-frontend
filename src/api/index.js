@@ -7,3 +7,5 @@ const API = axios.create({ baseURL: 'http://localhost:8000/', withCredentials: t
 export const getUser = () => API.get('/user');
 
 export const logout = () => API.post('/logout');
+
+export const createSheet = () => API.post('/sheet');

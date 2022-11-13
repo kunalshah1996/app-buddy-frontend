@@ -9,6 +9,9 @@ import { reducers } from './reducers';
 import './index.css';
 import App from './App';
 
+import { registerLicense } from '@syncfusion/ej2-base';
+
+registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFaclhJXGFWfVJpTGpQdk5xdV9DaVZUTWY/P1ZhSXxRd0RiWH1cdHJRQmRcWE0');
 
 const store = createStore(reducers, compose(applyMiddleware(thunk)));
 

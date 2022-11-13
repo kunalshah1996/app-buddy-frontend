@@ -10,7 +10,6 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
   const dispatch = useDispatch();
   const logout_user = () => {
-    console.log("logout clicked");
     dispatch(logout());
   };
   const user = useSelector((state) => state.user.user);

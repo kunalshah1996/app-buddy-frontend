@@ -7,6 +7,7 @@ import LoginPage from './components/loginPage/LoginPage';
 import Homepage from './components/homepage/Homepage';
 import Navbar from './components/navbar/Navbar';
 import About from './components/about/About';
+// import Kanban from './components/kanban/Kanban';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path='/' exact element={<Homepage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/about' element={<About />} />
+        {/* <Route path='/kanban' element={<Kanban />} /> */}
       </Routes>
     </BrowserRouter>
   );
