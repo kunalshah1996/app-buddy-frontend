@@ -30,7 +30,7 @@ const Homepage = () => {
         <div>Please Login</div>
       )}
       {sheet_state ? (
-        <div>Sheet Id: ${sheet_state}</div>
+        <div>Sheet Id: {sheet_state}</div>
       ) : (
         <button onClick={createNewSheet}>Create Google Sheet</button>
       )}
