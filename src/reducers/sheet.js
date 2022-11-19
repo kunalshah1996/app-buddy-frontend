@@ -4,7 +4,8 @@ const sheetReducer = (state = { sheetId: '' }, action) => {
     switch (action.type) {
         case actionType.CREATESHEET:
             return { ...state, sheetId: action.payload };
-
+        case actionType.GETSHEETID:
+            return { ...state, sheetId: action.payload };
         default:
             return state;
     }

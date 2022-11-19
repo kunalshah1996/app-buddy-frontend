@@ -1,12 +1,23 @@
-import { CREATESHEET } from "../constants/actionTypes";
+import { CREATESHEET, GETSHEETID } from "../constants/actionTypes";
 
 import * as api from '../api/index.js';
 
 export const createSheet = () => async (dispatch) => {
     try {
         const { data } = await api.createSheet();
-        console.log("data in actions", data);
         dispatch({ type: CREATESHEET, payload: data });
+
+    }
+    catch (error) {
+        console.log(error.message);
+    }
+}
+
+export const getSheetId = () => async (dispatch) => {
+    try {
+        const { data } = await api.getSheetId();
+
+        dispatch({ type: GETSHEETID, payload: data });
 
     }
     catch (error) {

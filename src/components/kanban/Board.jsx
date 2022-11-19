@@ -26,7 +26,7 @@ const Board = (props) => {
     });
 
     const data = await response.data;
-    console.log(data);
+
     return data.board;
   }
 

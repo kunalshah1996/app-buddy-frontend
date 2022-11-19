@@ -8,4 +8,6 @@ export const getUser = () => API.get('/user');
 
 export const logout = () => API.post('/logout');
 
-export const createSheet = () => API.post('/sheet');
+export const createSheet = () => API.post('/sheet/create');
+
+export const getSheetId = () => API.get('/sheet/getSheetId');

@@ -12,15 +12,15 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
   background-color: white;
 `;
 
 const Title = styled.h3`
-padding=5px;`;
+padding=2px;`;
 
 const TaskList = styled.div`
-  padding: 8px;
+  padding: 5px;
 `;
 
 const Column = (props) => {
@@ -29,6 +29,7 @@ const Column = (props) => {
       {(provided) => (
         <Container {...provided.draggableProps} ref={provided.innerRef}>
           <Title {...provided.dragHandleProps}>{props.column.title}</Title>
+          <p>{` Count: ${props.tasks.length}`}</p>
           <Droppable droppableId={props.column.id} type="task">
             {(provided) => (
               <TaskList {...provided.droppableProps} ref={provided.innerRef}>

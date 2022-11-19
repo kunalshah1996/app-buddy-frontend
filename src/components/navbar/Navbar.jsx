@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
@@ -8,9 +8,11 @@ import { logout } from "../../actions/users";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const logout_user = () => {
     dispatch(logout());
+    navigate("/");
   };
   const user = useSelector((state) => state.user.user);
   return (

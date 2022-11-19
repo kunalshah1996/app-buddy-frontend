@@ -6,9 +6,8 @@ const userReducer = (state = { user: {} }, action) => {
             localStorage.setItem('profile', action.payload);
             return { ...state, user: action.payload };
         case actionType.LOGOUT:
-            console.log("In reducer logout");
             localStorage.clear();
-            return { ...state, user: {} };
+            return { ...state, user: null, sheetId: null };
         default:
             return state;
     }
