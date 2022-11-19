@@ -23,13 +23,13 @@ const Mail = () => {
     fetchData()
       // make sure to catch any error
       .catch(console.error);
-  }, [mail]);
-  console.log(mail);
+  }, []);
+
   return (
     <div>
       <div>Mail</div>
       <div>
-        <p>{mail[0]}</p>
+        <p>{mail.mail}</p>
       </div>
     </div>
   );
