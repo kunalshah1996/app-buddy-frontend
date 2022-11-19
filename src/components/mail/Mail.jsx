@@ -9,12 +9,11 @@ const Mail = () => {
       const data = await axios.get("http://localhost:8000/mail/getMail", {
         withCredentials: true,
       });
-      console.log(data);
+
       // convert the data to json
-      //   const json = await data.json();
 
       // set state with the result
-      //   setMails(json);
+      setMails(data.data);
     };
 
     // call the function
@@ -22,10 +21,13 @@ const Mail = () => {
       // make sure to catch any error
       .catch(console.error);
   }, []);
-
+  console.log(mail);
   return (
     <div>
       <div>Mail</div>
+      <div>
+        <p>{mail[0]}</p>
+      </div>
     </div>
   );
 };
