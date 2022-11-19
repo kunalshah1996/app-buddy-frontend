@@ -23,7 +23,7 @@ const Mail = () => {
     fetchData()
       // make sure to catch any error
       .catch(console.error);
-  }, []);
+  }, [mail]);
   console.log(mail);
   return (
     <div>
