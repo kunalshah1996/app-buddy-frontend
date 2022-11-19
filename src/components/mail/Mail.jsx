@@ -6,9 +6,12 @@ const Mail = () => {
   useEffect(() => {
     const fetchData = async () => {
       // get the data from the api
-      const data = await axios.get("http://localhost:8000/mail/getMail", {
-        withCredentials: true,
-      });
+      const data = await axios.get(
+        "https://appbuddy.onrender.com/mail/getMail",
+        {
+          withCredentials: true,
+        }
+      );
 
       // convert the data to json
 
