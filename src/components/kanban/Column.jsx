@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Draggable, Droppable } from "react-beautiful-dnd";
 
 import Task from "./Task.jsx";
+import AddTask from "./AddTask.jsx";
 
 const Container = styled.div`
   margin: 8px;
@@ -30,7 +31,11 @@ const Column = (props) => {
         <Container {...provided.draggableProps} ref={provided.innerRef}>
           <Title {...provided.dragHandleProps}>{props.column.title}</Title>
           <p>{` Count: ${props.tasks.length}`}</p>
-          <Droppable droppableId={props.column.id} type="task">
+          <Droppable
+            droppableId={props.column.id}
+            // type="task"
+            direction="horizontal"
+          >
             {(provided) => (
               <TaskList {...provided.droppableProps} ref={provided.innerRef}>
                 {props.tasks.map((task, index) => (
@@ -44,6 +49,11 @@ const Column = (props) => {
                   />
                 ))}
                 {provided.placeholder}
+                <AddTask
+                  column={props.column}
+                  board={props.board}
+                  setBoard={props.setBoard}
+                />
               </TaskList>
             )}
           </Droppable>
