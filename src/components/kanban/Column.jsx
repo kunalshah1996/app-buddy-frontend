@@ -31,11 +31,7 @@ const Column = (props) => {
         <Container {...provided.draggableProps} ref={provided.innerRef}>
           <Title {...provided.dragHandleProps}>{props.column.title}</Title>
           <p>{` Count: ${props.tasks.length}`}</p>
-          <Droppable
-            droppableId={props.column.id}
-            // type="task"
-            direction="horizontal"
-          >
+          <Droppable droppableId={props.column.id} type="task">
             {(provided) => (
               <TaskList {...provided.droppableProps} ref={provided.innerRef}>
                 {props.tasks.map((task, index) => (
@@ -46,17 +42,19 @@ const Column = (props) => {
                     columnId={props.column.id}
                     state={props.state}
                     setState={props.setState}
+                    board={props.board}
+                    setBoard={props.setBoard}
                   />
                 ))}
                 {provided.placeholder}
-                <AddTask
-                  column={props.column}
-                  board={props.board}
-                  setBoard={props.setBoard}
-                />
               </TaskList>
             )}
           </Droppable>
+          <AddTask
+            column={props.column}
+            board={props.board}
+            setBoard={props.setBoard}
+          />
         </Container>
       )}
     </Draggable>
