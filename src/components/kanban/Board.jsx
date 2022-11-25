@@ -21,9 +21,13 @@ const Board = (props) => {
   }, []);
 
   async function fetchBoard() {
-    const response = await axios.get("http://localhost:8000/sheet/getAllData", {
-      withCredentials: true,
-    });
+    const response = await axios.get(
+      "https://appbuddy.onrender.com/sheet/getAllData",
+      {
+        //http://localhost:8000/sheet/getAllData
+        withCredentials: true,
+      }
+    );
 
     const data = await response.data;
 
