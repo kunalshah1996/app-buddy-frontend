@@ -2,24 +2,50 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { useSelector, useDispatch } from "react-redux";
 
+import { supabase } from "../../supabaseClient";
 import Column from "./Column";
+import { getUser } from "../../actions/users";
 
 const Container = styled.div`
   display: flex;
 `;
 
 const Board = (props) => {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.user);
+
+  useEffect(() => {
+    dispatch(getUser());
+  }, [dispatch]);
+  console.log(user);
   const [board, setBoard] = useState({
     tasks: {},
-    columns: {},
-    columnOrder: [],
+    columns: {
+      "column-1": {
+        id: "column-1",
+        title: "Applied",
+        taskIds: [],
+      },
+      "column-2": {
+        id: "column-2",
+        title: "OA Received",
+        taskIds: [],
+      },
+      "column-3": {
+        id: "column-3",
+        title: "Interview",
+        taskIds: [],
+      },
+    },
+    columnOrder: ["column-1", "column-2", "column-3"],
   });
+  console.log(board);
 
   useEffect(() => {
     fetchBoard().then((data) => setBoard(data));
   }, []);
-  console.log(board);
   async function fetchBoard() {
     const response = await axios.get("http://localhost:8000/sheet/getAllData", {
       withCredentials: true,
@@ -28,6 +54,17 @@ const Board = (props) => {
     const data = await response.data;
 
     return data.board;
+  }
+
+  useEffect(() => {
+    saveBoard();
+  }, [board]);
+
+  async function saveBoard() {
+    await supabase
+      .from("Users")
+      .update({ board: board })
+      .eq("user_id", user.id);
   }
 
   function onDragEnd(result) {

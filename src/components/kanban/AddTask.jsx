@@ -1,5 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
 import ReactModal from "react-modal";
+
+import { API } from "../../api/index";
 
 ReactModal.setAppElement("#root");
 
@@ -47,9 +50,13 @@ const AddTask = (props) => {
     });
   };
   const addNewTask = (columnId, content) => {
-    const newTaskId = String(
-      parseInt(Object.keys(props.board.tasks).slice(-1)) + 1
-    );
+    console.log(Object.keys(props.board.tasks).length < 1);
+    const newTaskId =
+      Object.keys(props.board.tasks).length < 1
+        ? "task-1"
+        : `task-${
+            parseInt(Object.keys(props.board.tasks).splice(-1)[0][5]) + 1
+          }`;
     const column = props.board.columns[columnId];
     const newTaskIds = Array.from(column.taskIds);
 
@@ -78,6 +85,13 @@ const AddTask = (props) => {
         },
       },
     });
+    API.post("/sheet/insertCompany", newTask)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
