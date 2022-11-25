@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Draggable } from "react-beautiful-dnd";
 
+import { API } from "../../api/index";
+
 const Container = styled.div`
   border: 1px solid black;
   border-radius: 2px;
@@ -11,6 +13,7 @@ const Container = styled.div`
 `;
 
 const Task = (props) => {
+  console.log(props.task);
   const deleteTask = (columnId, index, taskId) => {
     const column = props.board.columns[columnId];
     const newTaskIds = Array.from(column.taskIds);
@@ -31,6 +34,14 @@ const Task = (props) => {
         },
       },
     });
+
+    API.post("/sheet/deleteCompany", props.task)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (

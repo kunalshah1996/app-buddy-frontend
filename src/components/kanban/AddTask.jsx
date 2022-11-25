@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import ReactModal from "react-modal";
 
@@ -35,6 +34,20 @@ const AddTask = (props) => {
     setValue({
       ...value,
       position: e.target.value,
+    });
+  };
+  const handleOaLinkChange = (e) => {
+    e.preventDefault();
+    setValue({
+      ...value,
+      oa_link: e.target.value,
+    });
+  };
+  const handleDeadlineChange = (e) => {
+    e.preventDefault();
+    setValue({
+      ...value,
+      deadline: e.target.value,
     });
   };
 
@@ -107,6 +120,7 @@ const AddTask = (props) => {
         <ReactModal isOpen={showModal} contentLabel="Add Company">
           <div>
             <h1>Add Job</h1>
+            <label>Company Name</label>
             <input
               name="company_name"
               type="text"
@@ -114,6 +128,7 @@ const AddTask = (props) => {
               value={value.company_name}
               onChange={(e) => handleCompanyNameChange(e)}
             />
+            <label>Position</label>
             <input
               name="position"
               type="text"
@@ -121,6 +136,28 @@ const AddTask = (props) => {
               value={value.position}
               onChange={(e) => handlePositionChange(e)}
             />
+            {props.column.title === "OA Received" ? (
+              <div>
+                <label>OA Link</label>
+                <input
+                  name="oa_link"
+                  type="text"
+                  placeholder="OA Link"
+                  value={value.oa_link}
+                  onChange={(e) => handleOaLinkChange(e)}
+                />
+                <label>Deadline</label>
+                <input
+                  name="deadline"
+                  type="date"
+                  placeholder="Deadline"
+                  value={value.deadline}
+                  onChange={(e) => handleDeadlineChange(e)}
+                />
+              </div>
+            ) : (
+              <div></div>
+            )}
             <button type="submit" onClick={handleSubmit}>
               Save Job
             </button>
