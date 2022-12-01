@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import axios from "axios";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
-import { useSelector, useDispatch } from "react-redux";
 
 import Column from "./Column";
-import { getUser } from "../../actions/users";
 import { API } from "../../api/index";
 
 const Container = styled.div`

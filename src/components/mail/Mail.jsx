@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 import { API } from "../../api/index";
 
@@ -10,9 +9,6 @@ const Mail = () => {
       // get the data from the api
       const data = await API.get("mail/getMail");
 
-      // convert the data to json
-
-      // set state with the result
       setMails(data.data);
     };
 
