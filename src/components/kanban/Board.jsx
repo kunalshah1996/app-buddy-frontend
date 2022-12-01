@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { supabase } from "../../supabaseClient";
 import Column from "./Column";
 import { getUser } from "../../actions/users";
+import { API } from "../../api/index";
 
 const Container = styled.div`
   display: flex;
@@ -121,6 +122,8 @@ const Board = (props) => {
     const startTaskIds = Array.from(start.taskIds);
     startTaskIds.splice(source.index, 1);
 
+    updateDrag(start.taskIds[source.index], finish.title);
+
     const newStartColumn = {
       ...start,
       taskIds: startTaskIds,
@@ -143,6 +146,17 @@ const Board = (props) => {
       },
     });
     return;
+  }
+
+  function updateDrag(taskid, status) {
+    let data = { ...board.tasks[taskid], newStatus: status };
+    API.post("/sheet/updateStatus", data)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
   return (
     <DragDropContext onDragEnd={onDragEnd}>
