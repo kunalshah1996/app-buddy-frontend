@@ -13,13 +13,6 @@ const Container = styled.div`
 `;
 
 const Board = (props) => {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
-
-  useEffect(() => {
-    dispatch(getUser());
-  }, [dispatch]);
-  console.log(user);
   const [board, setBoard] = useState({
     tasks: {},
     columns: {
@@ -41,19 +34,14 @@ const Board = (props) => {
     },
     columnOrder: ["column-1", "column-2", "column-3"],
   });
-  console.log(board);
 
   useEffect(() => {
-    fetchBoard().then((data) => setBoard(data));
+    fetchBoard().then((data) => {
+      setBoard(data);
+    });
   }, []);
   async function fetchBoard() {
-    const response = await axios.get(
-      "https://appbuddy.onrender.com/sheet/getAllData",
-      {
-        //http://localhost:8000/sheet/getAllData
-        withCredentials: true,
-      }
-    );
+    const response = await API.get("sheet/getAllData");
 
     const data = await response.data;
 
