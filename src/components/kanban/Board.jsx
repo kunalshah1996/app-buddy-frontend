@@ -6,7 +6,10 @@ import Column from "./Column";
 import { API } from "../../api/index";
 
 const Container = styled.div`
+  
   display: flex;
+  justify-content: center;
+  width: 100%;
 `;
 
 const Board = (props) => {
