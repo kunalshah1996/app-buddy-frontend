@@ -6,8 +6,8 @@ import ReactModal from "react-modal";
 import { API } from "../../api/index";
 
 const Container = styled.div`
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
   border: 1px solid black;
   border-radius: 2px;
   padding: 8px;
@@ -74,7 +74,8 @@ const Task = (props) => {
             onClick={() => handleOpenModal(props.task)}
           >
             {props.task.company_name}
-            <span style={{marginLeft:"15px"}}
+            <span
+              style={{ marginLeft: "15px" }}
               onClick={() => {
                 deleteTask(props.columnId, props.index, props.task.id);
               }}
@@ -90,7 +91,12 @@ const Task = (props) => {
         <h2>Position : {modalData.position}</h2>
         {modalData.oa_link ? (
           <div>
-            <h2>OA Email Link : <a href={modalData.oa_link} target="_blank">Click to open email</a></h2>
+            <h2>
+              OA Email Link :{" "}
+              <a href={modalData.oa_link} target="_blank" rel="noreferrer">
+                Click to open email
+              </a>
+            </h2>
             <h2>Deadline : {modalData.deadline}</h2>
           </div>
         ) : (
