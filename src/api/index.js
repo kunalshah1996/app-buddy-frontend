@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const API = axios.create({ baseURL: 'https://appbuddy.tk/', withCredentials: true }); // 'http://localhost:8000/'
+export const API = axios.create({ baseURL: 'https://api.appbuddy.tk/', withCredentials: true }); // 'http://localhost:8000/'
 
 
 
