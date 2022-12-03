@@ -38,13 +38,13 @@ const Homepage = () => {
                 <div>
                   <Link to="/kanban">Kanban Board</Link>
                 </div>
+                <div>
+                  <Link to="/mail">Sync and Update</Link>
+                </div>
               </div>
             ) : (
               <button onClick={createNewSheet}>Create Google Sheet</button>
             )}
-          </div>
-          <div>
-            <Link to="/mail">Show Mail</Link>
           </div>
         </div>
       ) : (
