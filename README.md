@@ -1,5 +1,5 @@
 ## Link -
-#### https://app-buddy.netlify.app/
+#### https://appbuddy.tk
 
 ## Proposal
 
