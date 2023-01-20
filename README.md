@@ -1,6 +1,9 @@
 ## Link -
 #### https://appbuddy.tk
 
+## Backend Repository:
+#### https://github.com/kunalshah1996/app-buddy-backend
+
 ## Proposal
 
 Every individual goes through the generic “job struggle” phase at least once in their life. Tracking, logging and checking every email to monitor the status of every job they have applied for. We often tend to forget to account for human error in this process. Think about a scenario wherein you might have missed a deadline or an email for an online assessment. To make this “struggle” a bit easier, we are proposing a dashboard that allows you to easily log and track the current status of all your applications at a glance and thereby, aid in an efficient and organized job search.
